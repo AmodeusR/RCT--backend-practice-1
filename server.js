@@ -32,8 +32,15 @@ server.post("/videos", (request, reply) => {
   return reply.status(201).send();
 });
 
-server.put("/videos/:video_id:", () => {
+server.put("/videos/:id", (request, reply) => {
+  const videoId = request.params.id;
+  const data = request.body;
 
+  const updatedVideo = database.update(videoId, data);
+
+  console.log(updatedVideo);
+
+  return reply.status(204).send();
 });
 
 server.delete("/videos/:video_id:", () => {
