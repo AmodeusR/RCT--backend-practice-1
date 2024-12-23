@@ -43,8 +43,12 @@ server.put("/videos/:id", (request, reply) => {
   return reply.status(204).send();
 });
 
-server.delete("/videos/:video_id:", () => {
+server.delete("/videos/:id", (request, reply) => {
+  const id = request.params.id;
 
+  database.delete(id);
+
+  return reply.status(204).send;
 });
 
 
