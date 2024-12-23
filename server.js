@@ -14,8 +14,22 @@ server.get("/videos", () => {
   return videos;
 });
 
-server.post("/videos", () => {
-  return "video created"
+server.get("/video/:id", (request, reply) => {
+  const id = request.params.id;
+
+  return database.find(id)
+});
+
+server.post("/videos", (request, reply) => {
+  const { title, description, duration } = request.body;
+
+  database.create({
+    title,
+    description,
+    duration
+  });
+
+  return reply.status(201).send();
 });
 
 server.put("/videos/:video_id:", () => {
