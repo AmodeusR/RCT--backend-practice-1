@@ -14,7 +14,7 @@ server.get("/videos", () => {
   return videos;
 });
 
-server.get("/video/:id", (request, reply) => {
+server.get("/videos/:id", (request, reply) => {
   const id = request.params.id;
 
   return database.find(id)
