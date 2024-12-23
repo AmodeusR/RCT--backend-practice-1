@@ -8,9 +8,10 @@ const server = fastify({
 });
 
 
-server.get("/videos", (req, res) => {
+server.get("/videos", () => {
+  const videos = database.list();
   
-  return { response: "Worked"}
+  return videos;
 });
 
 server.post("/videos", () => {
