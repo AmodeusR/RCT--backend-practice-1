@@ -1,0 +1,16 @@
+{
+  "name": "do-zero",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch --no-warnings server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fastify": "^5.2.0"
+  }
+}
