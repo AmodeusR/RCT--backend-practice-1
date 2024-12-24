@@ -3,9 +3,18 @@ import { randomUUID } from "node:crypto";
 export class DatabaseMemory {
   #videos = new Map();
 
-  list() {
-    
-    return Array.from(this.#videos.values());
+  list(search) {
+    const videos = Array.from(this.#videos.values());
+    return videos.filter(video => {
+      const title = video.title.toLowerCase();
+      
+      if (search) {
+        const searched = search.toLowerCase();
+        return title.includes(searched);
+      }
+
+      return true;
+    })
   }
 
   find(id) {
