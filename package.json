@@ -12,6 +12,7 @@
   "description": "",
   "dependencies": {
     "fastify": "^5.2.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "postgres": "^3.4.5"
   }
 }
