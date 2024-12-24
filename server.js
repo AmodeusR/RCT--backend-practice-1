@@ -7,9 +7,10 @@ const server = fastify({
   logger: true
 });
 
-
-server.get("/videos", () => {
-  const videos = database.list();
+server.get("/videos", (request) => {
+  const search = request.query.search;
+  
+  const videos = database.list(search);
   
   return videos;
 });
@@ -49,6 +50,37 @@ server.delete("/videos/:id", (request, reply) => {
   database.delete(id);
 
   return reply.status(204).send;
+});
+
+
+// Database population route
+
+server.post("/populate", (request, reply) => {
+  const videos = [
+    {
+      title: "Learn node right away!",
+      description: "In this video we are going to learn more about node backend development",
+      duration: 308
+    },
+    {
+      title: "The right way to learn a new programming language",
+      description: "",
+      duration: 157
+    },
+    {
+      title: "How to use Nodemon",
+      description: "In this video we are going to learn how to use nodemon to run a node backend server",
+      duration: 432
+    },
+  ];
+
+  const result = database.populate(videos);
+
+  if (result === 1) {
+    return reply.status(201).send();
+  }
+
+  return "Already populated";
 });
 
 

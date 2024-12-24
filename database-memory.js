@@ -52,4 +52,14 @@ export class DatabaseMemory {
   delete(id) {
     this.#videos.delete(id);
   }
+
+  populate(videos) {
+    if (this.#videos.size >= 0) {
+      videos.forEach(video => this.create(video));
+
+      return 1;
+    }
+
+    return 0;
+  }
 }
