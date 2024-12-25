@@ -48,7 +48,8 @@ export class DatabasePostgres {
       UPDATE videos
       SET
         title = COALESCE(${title ?? null}, title),
-        description = COALESCE(${description ?? null}, description)
+        description = COALESCE(${description ?? null}, description),
+        updated_at = DEFAULT
       WHERE id = ${id};
     `;
   }
