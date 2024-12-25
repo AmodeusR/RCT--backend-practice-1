@@ -78,7 +78,9 @@ server.post("/populate", (request, reply) => {
     return reply.status(201).send();
   }
 
-  return "Already populated";
+  return {
+    message: "Already populated"
+  };
 });
 
 
