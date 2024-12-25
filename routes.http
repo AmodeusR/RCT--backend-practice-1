@@ -1,0 +1,41 @@
+# List all videos
+GET http://localhost:3333/videos
+
+###
+
+# Get one video
+GET http://localhost:3333/videos/(id)
+
+###
+
+# Create a video
+POST http://localhost:3333/videos
+Content-Type: application/json
+
+{
+  "title": "The best emulators of 2024",
+  "description": "Find out what were the best emulators of this year",
+  "duration": 507
+}
+
+###
+
+# Update a video
+PUT http://localhost:3333/videos/(id)
+Content-Type: application/json
+
+{
+  "title": "The best emulators of 2025" 
+}
+
+###
+
+# Delete a video
+DELETE http://localhost:3333/videos/(id)
+
+###
+
+# Populate database
+POST http://localhost:3333/populate
+
+
