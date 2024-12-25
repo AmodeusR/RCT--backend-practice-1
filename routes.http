@@ -13,8 +13,8 @@ POST http://localhost:3333/videos
 Content-Type: application/json
 
 {
-  "title": "The best emulators of 2024",
-  "description": "Find out what were the best emulators of this year",
+  "title": "Learn node today!",
+  "description": "This is the year you will certainly leearn Node!",
   "duration": 507
 }
 
@@ -25,7 +25,7 @@ PUT http://localhost:3333/videos/(id)
 Content-Type: application/json
 
 {
-  "title": "The best emulators of 2025" 
+  "title": "The best emulators of 2024"
 }
 
 ###
