@@ -7,6 +7,8 @@ This is a simple project practice for getting in touch with backend development.
 Run npm start in the terminal and it'll be ready to go.  
 You can access the route `/populate` to add some mock data into the database.
 
+The main branch runs through a in-memory database. The Postgres branch works using the PostgreSQL database.
+
 # Available routes
 
 Below is the description of each route available. You can also see the available routes in the routes.http file.
